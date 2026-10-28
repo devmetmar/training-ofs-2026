@@ -104,6 +104,7 @@ def _prepare_fields(
     direction: Optional[np.ndarray],
     wind_in_mps: bool,
     current_in_mps: bool,
+    wave_dir_convention: str = "meteo_from",
 ) -> tuple[np.ndarray, Optional[np.ndarray], Optional[np.ndarray]]:
     """Return (magnitude, u_quiver, v_quiver) in OFS display units."""
     mag = np.asarray(magnitude, dtype=float)
@@ -134,11 +135,25 @@ def _prepare_fields(
     if datatype == "direction":
         if direction is None:
             return mag, None, None
-        # Wave/swell dir in INACAWO is meteorological "coming from"
-        # (deg clockwise from N), same as WW3 / CF sea_surface_*_from_direction.
-        # Convert to quiver that points "going to" — matches inaflows/OFS plotter:
-        #   u0,v0 = cos(dir), sin(dir); phi = atan2(u0, v0); quiver = -2*(cos|sin)(phi)
         dire = np.asarray(direction, dtype=float)
+        conv = (wave_dir_convention or "meteo_from").strip().lower()
+        if conv in ("math_to", "cartesian_to", "opendap_hyrax"):
+            # Hyrax OPeNDAP `dir` (attrs often empty): degrees CCW from East,
+            # already the propagation / "going to" angle. Matches Mandala
+            # meteo-from via: meteo_from = (270 - dir) % 360.
+            uq = 2.0 * np.cos(np.deg2rad(dire))
+            vq = 2.0 * np.sin(np.deg2rad(dire))
+            return mag, uq, vq
+        if conv not in ("meteo_from", "from", "cf_from", "ofs"):
+            raise ValueError(
+                "wave_dir_convention must be 'meteo_from' (Mandala/CF/OFS) "
+                "or 'math_to' (OPeNDAP Hyrax dir); "
+                f"got {wave_dir_convention!r}"
+            )
+        # Meteorological "coming from" (deg CW from N), CF *_from_direction.
+        # Quiver points "going to" — matches inaflows/OFS plotter:
+        #   u0,v0 = cos(dir), sin(dir); phi = atan2(u0, v0); quiver = -2*(cos|sin)(phi)
+        # Equivalent: u,v = -sin(dir), -cos(dir).
         u0 = np.cos(np.deg2rad(dire))
         v0 = np.sin(np.deg2rad(dire))
         phi = np.arctan2(u0, v0)
@@ -164,6 +179,7 @@ def plot_ofs_map(
     map_area: str = "",
     wind_in_mps: bool = False,
     current_in_mps: bool = False,
+    wave_dir_convention: str = "meteo_from",
     quiver_skip: int = 8,
     quiver_scale: int = 20,
     figsize: tuple[float, float] = (10, 10),
@@ -185,6 +201,10 @@ def plot_ofs_map(
     wind_in_mps / current_in_mps:
         Set True when source data are in m/s so values are converted to the
         OFS colorbar unit (knot or cm/s).
+    wave_dir_convention:
+        ``meteo_from`` (default): Mandala/CF ``*_from_direction`` / OFS plotter
+        (deg CW from N, coming from). ``math_to``: OPeNDAP Hyrax ``dir``
+        (deg CCW from East, already going to).
     """
     if isinstance(param, str):
         param = get_param(param)
@@ -210,7 +230,14 @@ def plot_ofs_map(
             d_a = np.squeeze(d_a)
 
     mag_a, uq, vq = _prepare_fields(
-        param, mag_a, u_a, v_a, d_a, wind_in_mps, current_in_mps
+        param,
+        mag_a,
+        u_a,
+        v_a,
+        d_a,
+        wind_in_mps,
+        current_in_mps,
+        wave_dir_convention=wave_dir_convention,
     )
 
     bounds = list(param.clev)
