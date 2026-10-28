@@ -21,6 +21,7 @@ venv/
 *.key
 credentials*.json
 secrets*.json
+*.ipynb.bak
 
 # OS / editor
 .DS_Store
