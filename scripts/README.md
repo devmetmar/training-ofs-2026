@@ -54,3 +54,15 @@ sudo python3 scripts/loadtest_concurrent.py --mode synth --workers 8
 sudo python3 scripts/loadtest_concurrent.py --mode opendap --workers 8 --env-file .env
 sudo python3 scripts/loadtest_concurrent.py --mode mandala --workers 8 --env-file .env
 ```
+
+## Working tree tip
+
+`scripts/` hanya ada di tree branch `admin`. Jika sempat `git checkout main`, folder
+ini hilang dari disk. Kembalikan tanpa pindah branch:
+
+```bash
+git checkout admin -- scripts/
+git restore --staged scripts/   # biarkan tetap untracked/ignored di main
+```
+
+Atau kerja sehari-hari tetap di `admin`; sync peserta tetap memakai `--branch main`.
