@@ -134,13 +134,16 @@ def _prepare_fields(
     if datatype == "direction":
         if direction is None:
             return mag, None, None
-        # OFS operational wave-direction → quiver (matches inaflows plotter)
+        # Wave/swell dir in INACAWO is meteorological "coming from"
+        # (deg clockwise from N), same as WW3 / CF sea_surface_*_from_direction.
+        # Convert to quiver that points "going to" — matches inaflows/OFS plotter:
+        #   u0,v0 = cos(dir), sin(dir); phi = atan2(u0, v0); quiver = -2*(cos|sin)(phi)
         dire = np.asarray(direction, dtype=float)
-        uhs = np.cos(np.deg2rad(dire))
-        vhs = np.sin(np.deg2rad(dire))
-        uvcomp = np.arctan2(vhs, uhs)
-        uq = 2.0 * np.cos(uvcomp)
-        vq = 2.0 * np.sin(uvcomp)
+        u0 = np.cos(np.deg2rad(dire))
+        v0 = np.sin(np.deg2rad(dire))
+        phi = np.arctan2(u0, v0)
+        uq = -2.0 * np.cos(phi)
+        vq = -2.0 * np.sin(phi)
         return mag, uq, vq
 
     return mag, None, None
