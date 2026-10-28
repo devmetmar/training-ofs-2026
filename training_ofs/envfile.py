@@ -37,7 +37,9 @@ def load_env_file(
         key = key.strip()
         value = value.strip().strip('"').strip("'")
         loaded[key] = value
-        if override or key not in env:
+        # Treat missing OR empty existing values as unset so a blank
+        # VAULT_TOKEN=/USEROPENDAP= in the kernel env does not block .env.
+        if override or not env.get(key):
             env[key] = value
     return loaded
 
