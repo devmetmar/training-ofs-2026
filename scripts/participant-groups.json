@@ -1,0 +1,462 @@
+[
+  {
+    "nip": "200104222025051006",
+    "full_name": "IBNU ZAHY` ATHA ILLAH",
+    "workdir": "ibnu-illah",
+    "group": 1,
+    "jupyter_user": "jupyter-training-ofs-1",
+    "home": "/home/jupyter-training-ofs-1",
+    "workdir_path": "/home/jupyter-training-ofs-1/ibnu-illah",
+    "repo_path": "/home/jupyter-training-ofs-1/ibnu-illah/training-ofs-2026"
+  },
+  {
+    "nip": "197703031998031001",
+    "full_name": "M. JAMAL ZA, SP, M.Si",
+    "workdir": "jamal",
+    "group": 1,
+    "jupyter_user": "jupyter-training-ofs-1",
+    "home": "/home/jupyter-training-ofs-1",
+    "workdir_path": "/home/jupyter-training-ofs-1/jamal",
+    "repo_path": "/home/jupyter-training-ofs-1/jamal/training-ofs-2026"
+  },
+  {
+    "nip": "199606192016011001",
+    "full_name": "MUHAMMAD ZAKKY FAZA, S.Tr.Met.",
+    "workdir": "muhammad-faza",
+    "group": 1,
+    "jupyter_user": "jupyter-training-ofs-1",
+    "home": "/home/jupyter-training-ofs-1",
+    "workdir_path": "/home/jupyter-training-ofs-1/muhammad-faza",
+    "repo_path": "/home/jupyter-training-ofs-1/muhammad-faza/training-ofs-2026"
+  },
+  {
+    "nip": "199201102010121001",
+    "full_name": "SAYID MAHADIR, S.Tr",
+    "workdir": "sayid-mahadir",
+    "group": 1,
+    "jupyter_user": "jupyter-training-ofs-1",
+    "home": "/home/jupyter-training-ofs-1",
+    "workdir_path": "/home/jupyter-training-ofs-1/sayid-mahadir",
+    "repo_path": "/home/jupyter-training-ofs-1/sayid-mahadir/training-ofs-2026"
+  },
+  {
+    "nip": "198710192006041002",
+    "full_name": "YOSYEA OKTAVIANDRA, S.Tr",
+    "workdir": "yosyea-oktaviandra",
+    "group": 1,
+    "jupyter_user": "jupyter-training-ofs-1",
+    "home": "/home/jupyter-training-ofs-1",
+    "workdir_path": "/home/jupyter-training-ofs-1/yosyea-oktaviandra",
+    "repo_path": "/home/jupyter-training-ofs-1/yosyea-oktaviandra/training-ofs-2026"
+  },
+  {
+    "nip": "199601032014111001",
+    "full_name": "ZAKY ALIN NUARY, S.Tr, M.Si",
+    "workdir": "zaky-nuary",
+    "group": 1,
+    "jupyter_user": "jupyter-training-ofs-1",
+    "home": "/home/jupyter-training-ofs-1",
+    "workdir_path": "/home/jupyter-training-ofs-1/zaky-nuary",
+    "repo_path": "/home/jupyter-training-ofs-1/zaky-nuary/training-ofs-2026"
+  },
+  {
+    "nip": "200011212023021003",
+    "full_name": "AHMAD TAQIYA, S. Tr. Met",
+    "workdir": "ahmad-taqiya",
+    "group": 2,
+    "jupyter_user": "jupyter-training-ofs-2",
+    "home": "/home/jupyter-training-ofs-2",
+    "workdir_path": "/home/jupyter-training-ofs-2/ahmad-taqiya",
+    "repo_path": "/home/jupyter-training-ofs-2/ahmad-taqiya/training-ofs-2026"
+  },
+  {
+    "nip": "200002082024032001",
+    "full_name": "ALFI FAUZIA",
+    "workdir": "alfi-fauzia",
+    "group": 2,
+    "jupyter_user": "jupyter-training-ofs-2",
+    "home": "/home/jupyter-training-ofs-2",
+    "workdir_path": "/home/jupyter-training-ofs-2/alfi-fauzia",
+    "repo_path": "/home/jupyter-training-ofs-2/alfi-fauzia/training-ofs-2026"
+  },
+  {
+    "nip": "200109202025051001",
+    "full_name": "BURHAN SYARIF ACARYA",
+    "workdir": "burhan-acarya",
+    "group": 2,
+    "jupyter_user": "jupyter-training-ofs-2",
+    "home": "/home/jupyter-training-ofs-2",
+    "workdir_path": "/home/jupyter-training-ofs-2/burhan-acarya",
+    "repo_path": "/home/jupyter-training-ofs-2/burhan-acarya/training-ofs-2026"
+  },
+  {
+    "nip": "199903152021062001",
+    "full_name": "CARRIN AVISHA TAMBUNAN, S.Tr. Met, M.Sc",
+    "workdir": "carrin-tambunan",
+    "group": 2,
+    "jupyter_user": "jupyter-training-ofs-2",
+    "home": "/home/jupyter-training-ofs-2",
+    "workdir_path": "/home/jupyter-training-ofs-2/carrin-tambunan",
+    "repo_path": "/home/jupyter-training-ofs-2/carrin-tambunan/training-ofs-2026"
+  },
+  {
+    "nip": "199303242013122001",
+    "full_name": "FITRI ANNISA, S.Tr",
+    "workdir": "fitri-annisa",
+    "group": 2,
+    "jupyter_user": "jupyter-training-ofs-2",
+    "home": "/home/jupyter-training-ofs-2",
+    "workdir_path": "/home/jupyter-training-ofs-2/fitri-annisa",
+    "repo_path": "/home/jupyter-training-ofs-2/fitri-annisa/training-ofs-2026"
+  },
+  {
+    "nip": "198510082007011002",
+    "full_name": "NASRUN HUSEIN SIMBOLON, ST",
+    "workdir": "nasrun-simbolon",
+    "group": 2,
+    "jupyter_user": "jupyter-training-ofs-2",
+    "home": "/home/jupyter-training-ofs-2",
+    "workdir_path": "/home/jupyter-training-ofs-2/nasrun-simbolon",
+    "repo_path": "/home/jupyter-training-ofs-2/nasrun-simbolon/training-ofs-2026"
+  },
+  {
+    "nip": "199610082020012001",
+    "full_name": "ANNISA FATIKASARI, S.Tr",
+    "workdir": "annisa-fatikasari",
+    "group": 3,
+    "jupyter_user": "jupyter-training-ofs-3",
+    "home": "/home/jupyter-training-ofs-3",
+    "workdir_path": "/home/jupyter-training-ofs-3/annisa-fatikasari",
+    "repo_path": "/home/jupyter-training-ofs-3/annisa-fatikasari/training-ofs-2026"
+  },
+  {
+    "nip": "198604072006041001",
+    "full_name": "ARDIYANSAH, S.ST",
+    "workdir": "ardiyansah",
+    "group": 3,
+    "jupyter_user": "jupyter-training-ofs-3",
+    "home": "/home/jupyter-training-ofs-3",
+    "workdir_path": "/home/jupyter-training-ofs-3/ardiyansah",
+    "repo_path": "/home/jupyter-training-ofs-3/ardiyansah/training-ofs-2026"
+  },
+  {
+    "nip": "199907022022041003",
+    "full_name": "DEWANGGA PALGUNA, S.Tr.Met.",
+    "workdir": "dewangga-palguna",
+    "group": 3,
+    "jupyter_user": "jupyter-training-ofs-3",
+    "home": "/home/jupyter-training-ofs-3",
+    "workdir_path": "/home/jupyter-training-ofs-3/dewangga-palguna",
+    "repo_path": "/home/jupyter-training-ofs-3/dewangga-palguna/training-ofs-2026"
+  },
+  {
+    "nip": "200110182024032001",
+    "full_name": "MARIA OCTAVIA ROSNAULI HUTAGALUNG",
+    "workdir": "maria-hutagalung",
+    "group": 3,
+    "jupyter_user": "jupyter-training-ofs-3",
+    "home": "/home/jupyter-training-ofs-3",
+    "workdir_path": "/home/jupyter-training-ofs-3/maria-hutagalung",
+    "repo_path": "/home/jupyter-training-ofs-3/maria-hutagalung/training-ofs-2026"
+  },
+  {
+    "nip": "199808242021061001",
+    "full_name": "MOHAMMAD REZA IKRANEGARA, S.Tr. Met",
+    "workdir": "mohammad-ikranegara",
+    "group": 3,
+    "jupyter_user": "jupyter-training-ofs-3",
+    "home": "/home/jupyter-training-ofs-3",
+    "workdir_path": "/home/jupyter-training-ofs-3/mohammad-ikranegara",
+    "repo_path": "/home/jupyter-training-ofs-3/mohammad-ikranegara/training-ofs-2026"
+  },
+  {
+    "nip": "199909022022041002",
+    "full_name": "MUHAMMAD WIRA PRATAMA WAHID, S.Tr.Met.",
+    "workdir": "muhammad-wahid",
+    "group": 3,
+    "jupyter_user": "jupyter-training-ofs-3",
+    "home": "/home/jupyter-training-ofs-3",
+    "workdir_path": "/home/jupyter-training-ofs-3/muhammad-wahid",
+    "repo_path": "/home/jupyter-training-ofs-3/muhammad-wahid/training-ofs-2026"
+  },
+  {
+    "nip": "198706112008121001",
+    "full_name": "ANANG ARIANE, S.Si. M.Sc",
+    "workdir": "anang-ariane",
+    "group": 4,
+    "jupyter_user": "jupyter-training-ofs-4",
+    "home": "/home/jupyter-training-ofs-4",
+    "workdir_path": "/home/jupyter-training-ofs-4/anang-ariane",
+    "repo_path": "/home/jupyter-training-ofs-4/anang-ariane/training-ofs-2026"
+  },
+  {
+    "nip": "199703242020012002",
+    "full_name": "AYU ISTIQOMAH, S.Tr",
+    "workdir": "ayu-istiqomah",
+    "group": 4,
+    "jupyter_user": "jupyter-training-ofs-4",
+    "home": "/home/jupyter-training-ofs-4",
+    "workdir_path": "/home/jupyter-training-ofs-4/ayu-istiqomah",
+    "repo_path": "/home/jupyter-training-ofs-4/ayu-istiqomah/training-ofs-2026"
+  },
+  {
+    "nip": "199608072016012001",
+    "full_name": "DIAN LESTARI RAHANRA, S.Tr.Met.",
+    "workdir": "dian-rahanra",
+    "group": 4,
+    "jupyter_user": "jupyter-training-ofs-4",
+    "home": "/home/jupyter-training-ofs-4",
+    "workdir_path": "/home/jupyter-training-ofs-4/dian-rahanra",
+    "repo_path": "/home/jupyter-training-ofs-4/dian-rahanra/training-ofs-2026"
+  },
+  {
+    "nip": "199911172023021003",
+    "full_name": "HARUN ARRASHID, S.Tr. Met",
+    "workdir": "harun-arrashid",
+    "group": 4,
+    "jupyter_user": "jupyter-training-ofs-4",
+    "home": "/home/jupyter-training-ofs-4",
+    "workdir_path": "/home/jupyter-training-ofs-4/harun-arrashid",
+    "repo_path": "/home/jupyter-training-ofs-4/harun-arrashid/training-ofs-2026"
+  },
+  {
+    "nip": "199508242020011001",
+    "full_name": "MASAGUS SUSILO, S.Tr",
+    "workdir": "masagus-susilo",
+    "group": 4,
+    "jupyter_user": "jupyter-training-ofs-4",
+    "home": "/home/jupyter-training-ofs-4",
+    "workdir_path": "/home/jupyter-training-ofs-4/masagus-susilo",
+    "repo_path": "/home/jupyter-training-ofs-4/masagus-susilo/training-ofs-2026"
+  },
+  {
+    "nip": "199409082014111001",
+    "full_name": "REZZA PRIMADI, S.Tr",
+    "workdir": "rezza-primadi",
+    "group": 4,
+    "jupyter_user": "jupyter-training-ofs-4",
+    "home": "/home/jupyter-training-ofs-4",
+    "workdir_path": "/home/jupyter-training-ofs-4/rezza-primadi",
+    "repo_path": "/home/jupyter-training-ofs-4/rezza-primadi/training-ofs-2026"
+  },
+  {
+    "nip": "198908192010121001",
+    "full_name": "ADNAN DENDY MARDIKA, S.Kom, M.Si",
+    "workdir": "adnan-mardika",
+    "group": 5,
+    "jupyter_user": "jupyter-training-ofs-5",
+    "home": "/home/jupyter-training-ofs-5",
+    "workdir_path": "/home/jupyter-training-ofs-5/adnan-mardika",
+    "repo_path": "/home/jupyter-training-ofs-5/adnan-mardika/training-ofs-2026"
+  },
+  {
+    "nip": "199601022016012001",
+    "full_name": "EVI ISMI AZIZAH, S.Tr.Met",
+    "workdir": "evi-azizah",
+    "group": 5,
+    "jupyter_user": "jupyter-training-ofs-5",
+    "home": "/home/jupyter-training-ofs-5",
+    "workdir_path": "/home/jupyter-training-ofs-5/evi-azizah",
+    "repo_path": "/home/jupyter-training-ofs-5/evi-azizah/training-ofs-2026"
+  },
+  {
+    "nip": "199405092013122003",
+    "full_name": "JUSTIA PRISLLY DENISA GALENSONG, S.Tr",
+    "workdir": "justia-galensong",
+    "group": 5,
+    "jupyter_user": "jupyter-training-ofs-5",
+    "home": "/home/jupyter-training-ofs-5",
+    "workdir_path": "/home/jupyter-training-ofs-5/justia-galensong",
+    "repo_path": "/home/jupyter-training-ofs-5/justia-galensong/training-ofs-2026"
+  },
+  {
+    "nip": "199804032021062001",
+    "full_name": "LIESDA DWI KARTIKA, S.Tr. Met",
+    "workdir": "liesda-kartika",
+    "group": 5,
+    "jupyter_user": "jupyter-training-ofs-5",
+    "home": "/home/jupyter-training-ofs-5",
+    "workdir_path": "/home/jupyter-training-ofs-5/liesda-kartika",
+    "repo_path": "/home/jupyter-training-ofs-5/liesda-kartika/training-ofs-2026"
+  },
+  {
+    "nip": "199305212012102001",
+    "full_name": "SHAFIRA TSANYFADHILA, S.Tr, M.Si",
+    "workdir": "shafira-tsanyfadhila",
+    "group": 5,
+    "jupyter_user": "jupyter-training-ofs-5",
+    "home": "/home/jupyter-training-ofs-5",
+    "workdir_path": "/home/jupyter-training-ofs-5/shafira-tsanyfadhila",
+    "repo_path": "/home/jupyter-training-ofs-5/shafira-tsanyfadhila/training-ofs-2026"
+  },
+  {
+    "nip": "199111062013121001",
+    "full_name": "I WAYAN WIRATA",
+    "workdir": "wayan-wirata",
+    "group": 5,
+    "jupyter_user": "jupyter-training-ofs-5",
+    "home": "/home/jupyter-training-ofs-5",
+    "workdir_path": "/home/jupyter-training-ofs-5/wayan-wirata",
+    "repo_path": "/home/jupyter-training-ofs-5/wayan-wirata/training-ofs-2026"
+  },
+  {
+    "nip": "199807292021061001",
+    "full_name": "ARYA DALEXTA FADLY, S.Tr. Met",
+    "workdir": "arya-fadly",
+    "group": 6,
+    "jupyter_user": "jupyter-training-ofs-6",
+    "home": "/home/jupyter-training-ofs-6",
+    "workdir_path": "/home/jupyter-training-ofs-6/arya-fadly",
+    "repo_path": "/home/jupyter-training-ofs-6/arya-fadly/training-ofs-2026"
+  },
+  {
+    "nip": "199312082013122001",
+    "full_name": "IVANA GABRIELA SUAWA, S.Tr",
+    "workdir": "ivana-suawa",
+    "group": 6,
+    "jupyter_user": "jupyter-training-ofs-6",
+    "home": "/home/jupyter-training-ofs-6",
+    "workdir_path": "/home/jupyter-training-ofs-6/ivana-suawa",
+    "repo_path": "/home/jupyter-training-ofs-6/ivana-suawa/training-ofs-2026"
+  },
+  {
+    "nip": "manual",
+    "full_name": "JOHN DOE",
+    "workdir": "john-doe",
+    "group": 6,
+    "jupyter_user": "jupyter-training-ofs-6",
+    "home": "/home/jupyter-training-ofs-6",
+    "workdir_path": "/home/jupyter-training-ofs-6/john-doe",
+    "repo_path": "/home/jupyter-training-ofs-6/john-doe/training-ofs-2026"
+  },
+  {
+    "nip": "198702032006042001",
+    "full_name": "MUSRAWATI, S.ST.",
+    "workdir": "musrawati",
+    "group": 6,
+    "jupyter_user": "jupyter-training-ofs-6",
+    "home": "/home/jupyter-training-ofs-6",
+    "workdir_path": "/home/jupyter-training-ofs-6/musrawati",
+    "repo_path": "/home/jupyter-training-ofs-6/musrawati/training-ofs-2026"
+  },
+  {
+    "nip": "199307302013121001",
+    "full_name": "RIZKI FADHILLAH PRATAMA PUTRA, S.Tr, M.Si",
+    "workdir": "rizki-putra",
+    "group": 6,
+    "jupyter_user": "jupyter-training-ofs-6",
+    "home": "/home/jupyter-training-ofs-6",
+    "workdir_path": "/home/jupyter-training-ofs-6/rizki-putra",
+    "repo_path": "/home/jupyter-training-ofs-6/rizki-putra/training-ofs-2026"
+  },
+  {
+    "nip": "200105082024031001",
+    "full_name": "TRI WAHYUDI",
+    "workdir": "tri-wahyudi",
+    "group": 6,
+    "jupyter_user": "jupyter-training-ofs-6",
+    "home": "/home/jupyter-training-ofs-6",
+    "workdir_path": "/home/jupyter-training-ofs-6/tri-wahyudi",
+    "repo_path": "/home/jupyter-training-ofs-6/tri-wahyudi/training-ofs-2026"
+  },
+  {
+    "nip": "199507082014111001",
+    "full_name": "DHIAN YULIE CAHYONO, S.Tr",
+    "workdir": "dhian-cahyono",
+    "group": 7,
+    "jupyter_user": "jupyter-training-ofs-7",
+    "home": "/home/jupyter-training-ofs-7",
+    "workdir_path": "/home/jupyter-training-ofs-7/dhian-cahyono",
+    "repo_path": "/home/jupyter-training-ofs-7/dhian-cahyono/training-ofs-2026"
+  },
+  {
+    "nip": "198801052009111001",
+    "full_name": "FAJAR SETIAWAN, S.Si",
+    "workdir": "fajar-setiawan",
+    "group": 7,
+    "jupyter_user": "jupyter-training-ofs-7",
+    "home": "/home/jupyter-training-ofs-7",
+    "workdir_path": "/home/jupyter-training-ofs-7/fajar-setiawan",
+    "repo_path": "/home/jupyter-training-ofs-7/fajar-setiawan/training-ofs-2026"
+  },
+  {
+    "nip": "198910082009111001",
+    "full_name": "KHANIFAN SETIAWAN, S.Tr",
+    "workdir": "khanifan-setiawan",
+    "group": 7,
+    "jupyter_user": "jupyter-training-ofs-7",
+    "home": "/home/jupyter-training-ofs-7",
+    "workdir_path": "/home/jupyter-training-ofs-7/khanifan-setiawan",
+    "repo_path": "/home/jupyter-training-ofs-7/khanifan-setiawan/training-ofs-2026"
+  },
+  {
+    "nip": "199703212021061001",
+    "full_name": "MUHAMMAD ARYA DHARMAWAN, S.Tr. Met",
+    "workdir": "muhammad-dharmawan",
+    "group": 7,
+    "jupyter_user": "jupyter-training-ofs-7",
+    "home": "/home/jupyter-training-ofs-7",
+    "workdir_path": "/home/jupyter-training-ofs-7/muhammad-dharmawan",
+    "repo_path": "/home/jupyter-training-ofs-7/muhammad-dharmawan/training-ofs-2026"
+  },
+  {
+    "nip": "199409032013121001",
+    "full_name": "M. RANDY HERDYANSYAH. HB, S.Tr",
+    "workdir": "randy-herdyansyah",
+    "group": 7,
+    "jupyter_user": "jupyter-training-ofs-7",
+    "home": "/home/jupyter-training-ofs-7",
+    "workdir_path": "/home/jupyter-training-ofs-7/randy-herdyansyah",
+    "repo_path": "/home/jupyter-training-ofs-7/randy-herdyansyah/training-ofs-2026"
+  },
+  {
+    "nip": "199208302013122001",
+    "full_name": "ANGGUN RAHMANIA, S.Tr",
+    "workdir": "anggun-rahmania",
+    "group": 8,
+    "jupyter_user": "jupyter-training-ofs-8",
+    "home": "/home/jupyter-training-ofs-8",
+    "workdir_path": "/home/jupyter-training-ofs-8/anggun-rahmania",
+    "repo_path": "/home/jupyter-training-ofs-8/anggun-rahmania/training-ofs-2026"
+  },
+  {
+    "nip": "199409242013122001",
+    "full_name": "CAHYANI DIAN PAMUNGKAS, S.Tr",
+    "workdir": "cahyani-pamungkas",
+    "group": 8,
+    "jupyter_user": "jupyter-training-ofs-8",
+    "home": "/home/jupyter-training-ofs-8",
+    "workdir_path": "/home/jupyter-training-ofs-8/cahyani-pamungkas",
+    "repo_path": "/home/jupyter-training-ofs-8/cahyani-pamungkas/training-ofs-2026"
+  },
+  {
+    "nip": "199912152024031001",
+    "full_name": "MUHAMMAD REZA SAPUTRA",
+    "workdir": "muhammad-saputra",
+    "group": 8,
+    "jupyter_user": "jupyter-training-ofs-8",
+    "home": "/home/jupyter-training-ofs-8",
+    "workdir_path": "/home/jupyter-training-ofs-8/muhammad-saputra",
+    "repo_path": "/home/jupyter-training-ofs-8/muhammad-saputra/training-ofs-2026"
+  },
+  {
+    "nip": "199206202012101001",
+    "full_name": "RANGGA SETYA PRATAMA, S.Tr",
+    "workdir": "rangga-pratama",
+    "group": 8,
+    "jupyter_user": "jupyter-training-ofs-8",
+    "home": "/home/jupyter-training-ofs-8",
+    "workdir_path": "/home/jupyter-training-ofs-8/rangga-pratama",
+    "repo_path": "/home/jupyter-training-ofs-8/rangga-pratama/training-ofs-2026"
+  },
+  {
+    "nip": "199503262014112001",
+    "full_name": "RIZKA ERWIN LESTARI, S.Tr, M.Geo",
+    "workdir": "rizka-lestari",
+    "group": 8,
+    "jupyter_user": "jupyter-training-ofs-8",
+    "home": "/home/jupyter-training-ofs-8",
+    "workdir_path": "/home/jupyter-training-ofs-8/rizka-lestari",
+    "repo_path": "/home/jupyter-training-ofs-8/rizka-lestari/training-ofs-2026"
+  }
+]

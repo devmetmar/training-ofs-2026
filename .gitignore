@@ -13,12 +13,11 @@ dist/
 build/
 .venv/
 venv/
+
+# Secrets / PII source (never commit on any branch)
 .env
 .env.*
 OFS2026-Pre-Test-nilai.csv
-
-# Admin-only provisioning (not for participants)
-scripts/
 
 # Secrets / local overrides
 *.pem
