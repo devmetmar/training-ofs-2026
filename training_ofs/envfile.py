@@ -10,20 +10,26 @@ import os
 import sys
 from pathlib import Path
 from typing import Mapping, MutableMapping, Optional, Sequence, Union
-
-
+def _env_value(environ: Mapping[str, str], key: str) -> str:
+    """Return stripped env value; missing / blank / whitespace → ``\"\"``."""
+    return (environ.get(key) or "").strip()
 def load_env_file(
     path: Union[str, Path] = ".env",
     *,
     environ: Optional[MutableMapping[str, str]] = None,
     override: bool = False,
+    override_keys: Optional[Sequence[str]] = None,
 ) -> Mapping[str, str]:
     """Parse KEY=VALUE lines into ``environ`` (default: ``os.environ``).
 
     Quotes around values are stripped. Lines starting with ``#`` are ignored.
-    Existing variables are kept unless ``override=True``.
+    Existing variables are kept unless ``override=True`` or the existing value
+    is blank/whitespace. Keys listed in ``override_keys`` always take the
+    ``.env`` value when that value is non-empty (fixes Jupyter kernels that
+    inherit empty ``VAULT_TOKEN=`` / ``USEROPENDAP=`` from the hub).
     """
     env = environ if environ is not None else os.environ
+    force = {k for k in (override_keys or ())}
     loaded: dict[str, str] = {}
     p = Path(path)
     if not p.is_file():
@@ -37,12 +43,12 @@ def load_env_file(
         key = key.strip()
         value = value.strip().strip('"').strip("'")
         loaded[key] = value
-        # Treat missing OR empty existing values as unset so a blank
-        # VAULT_TOKEN=/USEROPENDAP= in the kernel env does not block .env.
-        if override or not env.get(key):
+        if not value:
+            continue
+        # Prefer .env when hub/kernel left a blank secret, or when forced.
+        if override or key in force or not _env_value(env, key):
             env[key] = value
     return loaded
-
 
 def _looks_like_project_root(path: Path) -> bool:
     return (path / "training_ofs").is_dir() and (
@@ -50,8 +56,6 @@ def _looks_like_project_root(path: Path) -> bool:
         or (path / "mandala-tutorial.ipynb").is_file()
         or (path / "README.md").is_file()
     )
-
-
 def find_project_root(
     start: Optional[Union[str, Path]] = None,
     *,
@@ -97,8 +101,6 @@ def find_project_root(
         "'training_ofs/'). Open the notebook from your workdir copy of the "
         "repo, or set the working directory to that folder."
     )
-
-
 def find_env_file(
     start: Optional[Union[str, Path]] = None,
     *,
@@ -106,8 +108,6 @@ def find_env_file(
 ) -> Path:
     """Return ``<project_root>/.env`` (may not exist yet)."""
     return find_project_root(start) / filename
-
-
 def load_project_env(
     start: Optional[Union[str, Path]] = None,
     *,
@@ -124,12 +124,18 @@ def load_project_env(
     """
     root = find_project_root(start)
     env_path = root / filename
+    env = environ if environ is not None else os.environ
     if env_path.is_file():
-        load_env_file(env_path, environ=environ, override=override)
+        # Always let .env fill required secrets even if the kernel has blanks.
+        load_env_file(
+            env_path,
+            environ=env,
+            override=override,
+            override_keys=required_keys,
+        )
     elif required_keys:
         # Still allow purely environment-based secrets, but surface a clear hint.
-        env = environ if environ is not None else os.environ
-        missing = [k for k in required_keys if not env.get(k)]
+        missing = [k for k in required_keys if not _env_value(env, k)]
         if missing:
             raise FileNotFoundError(
                 f"Missing {env_path} and environment keys: {', '.join(missing)}. "
@@ -138,11 +144,19 @@ def load_project_env(
             )
 
     if required_keys:
-        env = environ if environ is not None else os.environ
-        missing = [k for k in required_keys if not env.get(k)]
+        missing = [k for k in required_keys if not _env_value(env, k)]
         if missing:
-            raise KeyError(
-                f"Required secrets not set: {', '.join(missing)}. "
-                f"Add them to {env_path} (per-workdir) or export them."
+            present = []
+            if env_path.is_file():
+                present = [
+                    k
+                    for k in required_keys
+                    if k in load_env_file(env_path, environ={})
+                ]
+            hint = (
+                f"File {env_path} has keys {present} but values are empty."
+                if present
+                else f"Add them to {env_path} (per-workdir) or export them."
             )
+            raise KeyError(f"Required secrets not set: {', '.join(missing)}. {hint}")
     return env_path
