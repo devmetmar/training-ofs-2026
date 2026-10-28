@@ -6,7 +6,7 @@ Materi hands-on **Akses Data INACAWO** untuk pelatihan OFS (menyambung PPT *Rant
 
 | Urutan | File | Isi |
 |---|---|---|
-| 1 | [`opendap-inacawo-tutorial.ipynb`](opendap-inacawo-tutorial.ipynb) | OPeNDAP Hyrax: Atmos / Wave / Flows, struktur data, case study Selat Sunda |
+| 1 | [`opendap-tutorial.ipynb`](opendap-tutorial.ipynb) | OPeNDAP Hyrax: Atmos / Wave / Flows, struktur data, case study Selat Sunda |
 | 2 | [`mandala-tutorial.ipynb`](mandala-tutorial.ipynb) | Mandala S3 + zcollection/Zarr, bandingkan naming/satuan vs OPeNDAP, case study Laut Jawa |
 
 Jalankan keduanya dengan kernel / environment **`mandala_env`** di Mandalahub:
