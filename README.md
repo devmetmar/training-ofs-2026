@@ -12,9 +12,45 @@ Materi hands-on **Akses Data INACAWO** untuk pelatihan OFS (menyambung PPT *Rant
 Jalankan keduanya dengan kernel / environment **`mandala_env`** di Mandalahub:
 https://api-maritim.bmkg.go.id/mandalahub
 
+## Multi-user / workdir
+
+Materi ini **portable** — tidak bergantung pada path home akun Jupyter tertentu.
+
+Setiap peserta memakai **workdir sendiri** di akun kelompok `jupyter-training-ofs-1` … `jupyter-training-ofs-8`, dengan pola folder `namadepan-namabelakang/training-ofs-2026`.
+
+### Provisioning (admin)
+
+Daftar peserta diambil dari `OFS2026-Pre-Test-nilai.csv`, dibagi 8 kelompok (round-robin), lalu di-clone/pull otomatis:
+
+```bash
+# Preview
+sudo ./scripts/sync-participant-workdirs.sh --dry-run
+
+# Clone / update semua workdir dari mirror lokal (repo ini)
+sudo ./scripts/sync-participant-workdirs.sh
+
+# Hanya update clone yang sudah ada
+sudo ./scripts/sync-participant-workdirs.sh --pull-only
+```
+
+Manifest kelompok: [`scripts/participant-groups.csv`](scripts/participant-groups.csv).
+
+Alur update materi untuk semua peserta:
+
+1. Commit + push perubahan di mirror admin.
+2. `sudo ./scripts/sync-participant-workdirs.sh --pull-only`
+
+Peserta lalu:
+
+1. Login ke akun kelompok yang sesuai.
+2. Buka folder `namadepan-namabelakang/training-ofs-2026`.
+3. Buat `.env` sendiri di root proyek itu (jangan share).
+
+Notebook mencari root proyek lewat folder `training_ofs/`, lalu memuat `.env` dari situ (`training_ofs.load_project_env`).
+
 ## Prasyarat `.env`
 
-Buat file `.env` di root proyek (sudah di-ignore git):
+Buat file `.env` di root proyek workdir Anda (sudah di-ignore git):
 
 ```bash
 USEROPENDAP=...
@@ -36,9 +72,11 @@ Package [`training_ofs`](training_ofs/) memuat:
 - `ofs_plot_style.py` — **semua** parameter `mapCollection` (colormap, levels, title, unit) dari [devmetmar/ofs-plotter](https://github.com/devmetmar/ofs-plotter)
 - `ofs_plot_layout.py` — layout peta (logo BMKG, title, time box, colorbar/legend, basemap, footer)
 - `assets/logo60k.png` — logo untuk header peta
+- `envfile.py` — pencarian project root + load `.env` portable
 
 ```python
-from training_ofs import plot_ofs_map, list_params, get_param
+from training_ofs import plot_ofs_map, list_params, get_param, find_project_root
+print(find_project_root())
 print(list_params())
 ```
 
@@ -62,4 +100,4 @@ Detail satuan, mapping nama, dan konvensi arah dijelaskan di markdown kedua note
 
 - OPeNDAP: subset di server; jangan unduh file utuh multi-GB.
 - Mandala: baca langsung dari S3 di Mandalahub; filter tanggal sempit.
-- Jangan commit `.env`, token Vault, atau secret S3.
+- Satu workdir / satu `.env` per peserta; jangan commit `.env`, token Vault, atau secret S3.
