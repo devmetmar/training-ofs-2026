@@ -16,7 +16,9 @@ venv/
 .env
 .env.*
 OFS2026-Pre-Test-nilai.csv
-scripts/participant-groups.json
+
+# Admin-only provisioning (not for participants)
+scripts/
 
 # Secrets / local overrides
 *.pem
