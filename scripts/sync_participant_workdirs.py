@@ -157,12 +157,26 @@ def run(cmd: list[str], *, dry_run: bool = False, cwd: Optional[Path] = None) ->
     print("+", " ".join(cmd))
     if dry_run:
         return
-    env = os.environ.copy()
-    # Root updating repos owned by jupyter-* users triggers safe.directory checks.
-    env.setdefault("GIT_CONFIG_COUNT", "1")
-    env.setdefault("GIT_CONFIG_KEY_0", "safe.directory")
-    env.setdefault("GIT_CONFIG_VALUE_0", "*")
-    subprocess.run(cmd, check=True, cwd=str(cwd) if cwd else None, env=env)
+    subprocess.run(cmd, check=True, cwd=str(cwd) if cwd else None)
+
+
+def ensure_git_safe_directories(paths: Iterable[Path], *, dry_run: bool) -> None:
+    """Allow root to operate on repos owned by jupyter-* users."""
+    if dry_run or os.geteuid() != 0:
+        return
+    try:
+        existing = subprocess.check_output(
+            ["git", "config", "--global", "--get-all", "safe.directory"],
+            text=True,
+        ).splitlines()
+    except subprocess.CalledProcessError:
+        existing = []
+    wanted = {"*"}
+    wanted.update(str(p.resolve()) for p in paths)
+    for path in sorted(wanted):
+        if path in existing:
+            continue
+        run(["git", "config", "--global", "--add", "safe.directory", path])
 
 
 def chown_path(path: Path, user: str, dry_run: bool) -> None:
@@ -336,6 +350,11 @@ def main(argv: Optional[list[str]] = None) -> int:
 
     counts = Counter(p.group for p in participants)
     print("Group sizes:", dict(sorted(counts.items())))
+
+    ensure_git_safe_directories(
+        [args.mirror, *[p.repo_path for p in participants]],
+        dry_run=args.dry_run,
+    )
 
     stats = {"cloned": 0, "pulled": 0, "skipped": 0}
     for p in participants:
